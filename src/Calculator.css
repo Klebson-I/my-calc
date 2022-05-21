@@ -48,3 +48,7 @@
     min-height: 60px;
     font-family: 'Press Start 2P', cursive;
 }
+.calculatorContainer__HistoryContainer ul {
+    margin-left: 5px;
+    list-style: none;
+}

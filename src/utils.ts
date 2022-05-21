@@ -16,7 +16,7 @@ const findNumberFromString = (mathOperationStringArray:string[]) => {
     return arr;
 }
 
-const parseMathOperation = (mathOperation:string) : MathObject => {
+export const parseMathOperation = (mathOperation:string) : MathObject => {
     const mathOperationStringArray = mathOperation.split("");
     let typeOfOperation:MathSign = MathSign.minus;
 
@@ -51,29 +51,29 @@ export const evaluateResults = (mathOperation:MathObject) : ReturnFromEvaluation
     switch (sign) {
         case MathSign.multiply:{
             result = firstNumber*secondNumber;
-            historyEntry = `${firstNumber} ${MathSign.multiply} ${secondNumber} = ${result}`;
+            historyEntry = `${firstNumber} ${MathSign.multiply} ${secondNumber} = ${result.toFixed(3)}`;
             break;
         }
         case MathSign.divide: {
             result = firstNumber/secondNumber;
-            historyEntry = `${firstNumber} ${MathSign.divide} ${secondNumber} = ${result}`;
+            historyEntry = `${firstNumber} ${MathSign.divide} ${secondNumber} = ${result.toFixed(3)}`;
             break;
         }
         case MathSign.minus:{
             result = firstNumber-secondNumber;
-            historyEntry = `${firstNumber} ${MathSign.minus} ${secondNumber} = ${result}`;
+            historyEntry = `${firstNumber} ${MathSign.minus} ${secondNumber} = ${result.toFixed(3)}`;
             break;
         }
         case MathSign.plus:{
             result = firstNumber+secondNumber;
-            historyEntry = `${firstNumber} ${MathSign.plus} ${secondNumber} = ${result}`;
+            historyEntry = `${firstNumber} ${MathSign.plus} ${secondNumber} = ${result.toFixed(3)}`;
             break;
         }
         default:break;
     }
 
     return {
-        result,
+        result:Number(result.toFixed(3)),
         historyEntry
     }
 }
