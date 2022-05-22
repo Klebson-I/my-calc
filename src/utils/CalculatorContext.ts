@@ -10,6 +10,7 @@ interface CalculatorContextType {
     result: number | string;
     evaluateOperation: () => void;
     deleteLastSign: () => void;
+    handleAddToMathOperationClick: (sign:string) => void;
 }
 
 export const CalculatorContext = createContext<CalculatorContextType | null>(

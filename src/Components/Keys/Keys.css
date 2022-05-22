@@ -2,14 +2,3 @@
     width: 100%;
     display: flex;
 }
-
-.calculatorContainer__workContainer__rightButtonsDiv{
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-}
-.calculatorContainer__workContainer__rightButtonsDiv--button{
-    width: 100%;
-    min-height: 60px;
-    font-family: 'Press Start 2P', cursive;
-}

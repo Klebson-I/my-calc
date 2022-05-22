@@ -1,23 +1,8 @@
-import React, {createContext, useEffect, useState} from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import './Calculator.css';
-import { evaluateResults, parseMathOperation } from './utils';
+import { evaluateResults, parseMathOperation } from './utils/utils';
 import { Keys } from './Components/Keys/Keys';
-
-interface CalculatorContextType {
-    mathOperation: string;
-    addToMathOperation: (sign: number | string) => void;
-    clearMathOperation: () => void;
-    history: string[];
-    addToHistory: (line: string) => void;
-    clearHistory: () => void;
-    result: number | string;
-    evaluateOperation: () => void;
-    deleteLastSign: () =>void;
-}
-
-export const CalculatorContext = createContext<CalculatorContextType | null>(
-    null
-);
+import { CalculatorContext } from './utils/CalculatorContext';
 
 export const Calculator = () => {
     const [mathOperation, setMathOperation] = useState<string>('');
@@ -25,7 +10,7 @@ export const Calculator = () => {
     const [result, setResult] = useState<number | string>(0);
 
     const addToMathOperation = (sign: number | string) => {
-        setMathOperation((prev) => prev += sign);
+        setMathOperation((prev) => (prev += sign));
     };
 
     const clearMathOperation = () => {
@@ -40,9 +25,12 @@ export const Calculator = () => {
     };
 
     const deleteLastSign = () => {
-        const temporaryMathOperation = mathOperation.slice(0,mathOperation.length-1);
+        const temporaryMathOperation = mathOperation.slice(
+            0,
+            mathOperation.length - 1
+        );
         setMathOperation(temporaryMathOperation);
-    }
+    };
 
     const addToHistory = (line: string) => {
         setHistory((prev) => [...prev, line]);
@@ -52,15 +40,17 @@ export const Calculator = () => {
         setHistory([]);
     };
 
+    const handleAddToMathOperationClick = (sign: string) => {
+        addToMathOperation(sign);
+    };
 
-
-    useEffect(()=> {
+    useEffect(() => {
         setMathOperation(String(result));
-    },[result])
+    }, [result]);
 
-    useEffect(()=>{
-        setMathOperation("");
-    },[])
+    useEffect(() => {
+        setMathOperation('');
+    }, []);
 
     return (
         <main className="calculatorContainer">
@@ -74,7 +64,8 @@ export const Calculator = () => {
                     clearHistory,
                     result,
                     evaluateOperation,
-                    deleteLastSign
+                    deleteLastSign,
+                    handleAddToMathOperationClick
                 }}
             >
                 <div className="calculatorContainer__workContainer">
@@ -96,7 +87,10 @@ export const Calculator = () => {
                     <h2 className="calculatorContainer__HistoryContainer--h2">
                         History
                     </h2>
-                    <button className="calculatorContainer__HistoryContainer--button" onClick={()=>clearHistory()}>
+                    <button
+                        className="calculatorContainer__HistoryContainer--button"
+                        onClick={() => clearHistory()}
+                    >
                         Delete history
                     </button>
                     <ul>

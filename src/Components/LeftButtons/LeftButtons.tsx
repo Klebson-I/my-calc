@@ -10,11 +10,8 @@ export const LeftButtons = () => {
         return null;
     }
 
-    const {clearMathOperation,addToMathOperation,deleteLastSign} = context;
+    const {clearMathOperation,addToMathOperation,deleteLastSign, handleAddToMathOperationClick} = context;
 
-    const handleAddToMathOperationClick = (sign: string) => {
-        addToMathOperation(sign);
-    };
 
     return <div className="calculatorContainer__workContainer__leftButtonsDiv">
         <button
