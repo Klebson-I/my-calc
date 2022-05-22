@@ -1,0 +1,16 @@
+.calculatorContainer__workContainer__leftButtonsDiv{
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.calculatorContainer__workContainer__leftButtonsDiv--375button{
+    width: 50%;
+    min-height: 60px;
+    font-family: 'Press Start 2P', cursive;
+}
+.calculatorContainer__workContainer__leftButtonsDiv--25button{
+    width: 33.3%;
+    min-height: 60px;
+    font-family: 'Press Start 2P', cursive;
+}
