@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React, {useContext} from 'react';
 import './Keys.css';
-import { CalculatorContext } from '../../utils/CalculatorContext';
+import {CalculatorContext} from '../../utils/CalculatorContext';
 import {LeftButtons} from "../LeftButtons/LeftButtons";
 import {RightButtons} from "../RightButtons/RightButtons";
 
@@ -13,10 +13,6 @@ export const Keys = () => {
 
     const { addToMathOperation, clearMathOperation, evaluateOperation, deleteLastSign, mathOperation } =
         context;
-
-    const handleAddToMathOperationClick = (sign: string) => {
-        addToMathOperation(sign);
-    };
 
     return (
         <div className="keys">

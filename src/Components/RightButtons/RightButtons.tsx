@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import './RightButtons.css';
 import {CalculatorContext} from "../../utils/CalculatorContext";
+import {Button} from "../Button/Button";
 
 export const RightButtons = () => {
     const context = useContext(CalculatorContext);
@@ -13,35 +14,35 @@ export const RightButtons = () => {
 
 
     return <div className="calculatorContainer__workContainer__rightButtonsDiv">
-        <button
+        <Button
             className="calculatorContainer__workContainer__rightButtonsDiv--button"
-            onClick={() => handleAddToMathOperationClick('+')}
+            handleClickFunction={() => handleAddToMathOperationClick('+')}
         >
             +
-        </button>
-        <button
+        </Button>
+        <Button
             className="calculatorContainer__workContainer__rightButtonsDiv--button"
-            onClick={() => handleAddToMathOperationClick('-')}
+            handleClickFunction={() => handleAddToMathOperationClick('-')}
         >
             -
-        </button>
-        <button
+        </Button>
+        <Button
             className="calculatorContainer__workContainer__rightButtonsDiv--button"
-            onClick={() => handleAddToMathOperationClick('/')}
+            handleClickFunction={() => handleAddToMathOperationClick('/')}
         >
             /
-        </button>
-        <button
+        </Button>
+        <Button
             className="calculatorContainer__workContainer__rightButtonsDiv--button"
-            onClick={() => handleAddToMathOperationClick('*')}
+            handleClickFunction={() => handleAddToMathOperationClick('*')}
         >
             *
-        </button>
-        <button
+        </Button>
+        <Button
             className="calculatorContainer__workContainer__rightButtonsDiv--button"
-            onClick={() => evaluateOperation()}
+            handleClickFunction={() => evaluateOperation()}
         >
             =
-        </button>
+        </Button>
     </div>
 }
