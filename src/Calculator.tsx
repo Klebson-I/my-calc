@@ -1,8 +1,11 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import './Calculator.css';
-import { evaluateResults, parseMathOperation } from './utils/utils';
-import { Keys } from './Components/Keys/Keys';
-import { CalculatorContext } from './utils/CalculatorContext';
+import {evaluateResults, parseMathOperation} from './utils/utils';
+import {Keys} from './Components/Keys/Keys';
+import {CalculatorContext} from './utils/CalculatorContext';
+import {CalculatorInput} from "./Components/CalculatorInput/CalculatorInput";
+import {Button} from "./Components/Button/Button";
+import {HistoryList} from "./Components/HistoryList/HistoryList";
 
 export const Calculator = () => {
     const [mathOperation, setMathOperation] = useState<string>('');
@@ -72,32 +75,21 @@ export const Calculator = () => {
                     <header className="calculatorContainer__workContainer__header">
                         <h1>Calculator</h1>
                     </header>
-
-                    <input
-                        type="text"
-                        className="mathInput"
-                        readOnly={true}
-                        value={mathOperation}
-                    />
-
-                    <Keys />
+                    <CalculatorInput/>
+                    <Keys/>
                 </div>
 
                 <div className="calculatorContainer__HistoryContainer">
                     <h2 className="calculatorContainer__HistoryContainer--h2">
                         History
                     </h2>
-                    <button
+                    <Button
                         className="calculatorContainer__HistoryContainer--button"
-                        onClick={() => clearHistory()}
+                        handleClickFunction={() => clearHistory()}
                     >
                         Delete history
-                    </button>
-                    <ul>
-                        {history.map((elem, index) => (
-                            <li key={index}>{elem}</li>
-                        ))}
-                    </ul>
+                    </Button>
+                    <HistoryList/>
                 </div>
             </CalculatorContext.Provider>
         </main>

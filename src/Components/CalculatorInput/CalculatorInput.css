@@ -1,0 +1,9 @@
+.mathInput {
+    width: 100%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 35px;
+    padding: 10px;
+    text-align: right;
+    color: white;
+    background-color: slategray;
+}

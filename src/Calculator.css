@@ -24,15 +24,7 @@
 .calculatorContainer__workContainer__header h1{
     font-family: 'Press Start 2P', cursive;
 }
-.mathInput{
-    width: 100%;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 35px;
-    padding: 10px;
-    text-align: right;
-    color: white;
-    background-color: slategray;
-}
+
 
 .calculatorContainer__HistoryContainer--h2{
     font-family: 'Press Start 2P', cursive;
@@ -47,8 +39,4 @@
 .calculatorContainer__HistoryContainer--button{
     min-height: 60px;
     font-family: 'Press Start 2P', cursive;
-}
-.calculatorContainer__HistoryContainer ul {
-    margin-left: 5px;
-    list-style: none;
 }
